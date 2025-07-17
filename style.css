@@ -1,0 +1,140 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --card-color: #2c2c2c;
+    --border-color: #444;
+    
+    /* Team Colors */
+    --team1-color: #e63946; /* Red */
+    --team2-color: #457b9d; /* Blue */
+    --team3-color: #52b788; /* Green */
+    --team4-color: #fca311; /* Yellow */
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    transition: background 0.8s ease;
+    overflow: hidden;
+}
+
+/* Background gradient styles */
+body.team1-active { background: radial-gradient(circle at 50% 50%, #4d1318, var(--bg-color) 70%); }
+body.team2-active { background: radial-gradient(circle at 50% 50%, #172934, var(--bg-color) 70%); }
+body.team3-active { background: radial-gradient(circle at 50% 50%, #1a3c2a, var(--bg-color) 70%); }
+body.team4-active { background: radial-gradient(circle at 50% 50%, #523506, var(--bg-color) 70%); }
+
+.screen {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.screen.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: var(--card-color);
+    padding: 30px 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border: 1px solid var(--border-color);
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; }
+p { color: #aaa; margin-top: 0; }
+
+/* Setup Screen */
+.setup-control {
+    margin: 25px 0;
+    text-align: left;
+}
+.setup-control label { display: block; margin-bottom: 8px; font-weight: 700; }
+select, input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: #333;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.action-btn {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: var(--team2-color);
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+.action-btn:hover { transform: scale(1.05); box-shadow: 0 5px 20px rgba(69, 123, 157, 0.3); }
+
+/* Game Screen */
+#game-timer-display { font-size: 5rem; font-weight: 900; position: absolute; top: 20px; text-shadow: 0 0 20px rgba(0,0,0,0.5); }
+
+#scores-container {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    top: 140px;
+}
+.score-display {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    min-width: 100px;
+    text-align: center;
+    color: white;
+}
+.score-display .score { display: block; font-size: 2.5rem; }
+
+#controls-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: absolute;
+    bottom: 5%;
+    padding: 0 20px;
+    justify-content: center;
+}
+.control-btn {
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    border: 4px solid rgba(255,255,255,0.8);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform 0.1s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+.control-btn:active { transform: scale(0.95); }
+
+/* Team specific colors for buttons and scores */
+.team1 { background-color: var(--team1-color); }
+.team2 { background-color: var(--team2-color); }
+.team3 { background-color: var(--team3-color); }
+.team4 { background-color: var(--team4-color); }
+
+/* Game Over Screen */
+#final-scores { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; font-size: 1.2rem; }
+#winner-announcement { text-transform: uppercase; }
+  
