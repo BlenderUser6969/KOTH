@@ -22,7 +22,7 @@ const TEAM_CONFIG = {
     3: { name: 'Green', colorClass: 'team3' },
     4: { name: 'Yellow', colorClass: 'team4' },
 };
-const POINTS_PER_SECOND = 10;
+const POINTS_PER_SECOND = 2;
 
 let gameState = {};
 let gameTimerInterval = null;
