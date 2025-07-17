@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>King of the Hill Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body id="game-body">
+
+    <div id="setup-screen" class="screen active">
+        <div class="container">
+            <h1>King of the Hill</h1>
+            <p>Set up your game and press Start when you're ready.</p>
+            
+            <div class="setup-control">
+                <label for="num-teams">Number of Teams:</label>
+                <select id="num-teams">
+                    <option value="2">2 Teams</option>
+                    <option value="3">3 Teams</option>
+                    <option value="4">4 Teams</option>
+                </select>
+            </div>
+            
+            <div class="setup-control">
+                <label for="game-duration">Game Duration (minutes):</label>
+                <input type="number" id="game-duration" value="5" min="1">
+            </div>
+
+            <button id="start-game-btn" class="action-btn">Start Game</button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div id="game-timer-display">00:00</div>
+        <div id="scores-container">
+            </div>
+        <div id="controls-container">
+            </div>
+    </div>
+
+    <div id="game-over-screen" class="screen">
+        <div class="container">
+            <h1 id="winner-announcement"></h1>
+            <p>Final Scores:</p>
+            <div id="final-scores">
+                </div>
+            <button id="play-again-btn" class="action-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
